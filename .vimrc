@@ -1,17 +1,24 @@
-" ============================================================================
-" .vimrc 配置文件模板
-" ============================================================================
-
 " ---- 基础设置 ---------------------------------------------------------------
 
 " 关闭 vi 兼容模式，启用 Vim 特有功能
 set nocompatible
 
 " 启用文件类型检测、插件和缩进
-"filetype plugin indent on
+filetype plugin indent on
 
 " 开启语法高亮
 syntax on
+
+
+" ---- 插件 -------------------------------------------------------------------
+call plug#begin()
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
+Plug 'sainnhe/sonokai'
+Plug 'junegunn/fzf'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
 
 " ---- 编码 -------------------------------------------------------------------
 
@@ -29,7 +36,16 @@ set termencoding=utf-8
 
 " ---- 外观 -------------------------------------------------------------------
 " 主题
-colorscheme corporation
+if has('termguicolors')
+    set termguicolors
+endif
+
+let g:sonokai_style = 'atlantis'
+let g:sonokai_better_performance = 1
+let g:sonokai_disable_italic_comment = 1
+
+colorscheme sonokai
+"let g:lightline = {'colorscheme' : 'sonokai'}
 
 " 显示行号
 set number
@@ -221,20 +237,6 @@ set nobackup
 " 快速打开/关闭 NERDTree 风格的文件浏览器（使用 netrw）
 "nnoremap <leader>e :Explore<CR>
 
-" ---- 文件类型特定配置 --------------------------------------------------------
-
-" Markdown / 纯文本：自动折行
-"autocmd FileType markdown,text setlocal wrap linebreak nolist
-
-" Python：PEP 8 风格（4 空格缩进）
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
-
-" JavaScript / TypeScript / HTML / CSS：2 空格缩进
-autocmd FileType javascript,typescript,html,css,scss,json,yaml setlocal tabstop=4 shiftwidth=4 softtabstop=4
-
-" Makefile：使用 Tab 而非空格
-autocmd FileType make setlocal noexpandtab
-
 " ---- 性能优化 ---------------------------------------------------------------
 
 " 关闭兼容旧版 Vi 的正则引擎
@@ -250,41 +252,3 @@ set synmaxcol=200
 set noerrorbells
 set visualbell
 
-" ---- Vim-Plug 插件管理器示例 ------------------------------------------------
-
-" 安装方法（终端执行）：
-" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-"   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-" call plug#begin('~/.vim/plugged')
-"
-" " 外观主题
-" Plug 'morhetz/gruvbox'
-"
-" " 文件树
-" Plug 'preservim/nerdtree'
-"
-" " 模糊查找
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'junegunn/fzf.vim'
-"
-" " 状态栏
-" Plug 'vim-airline/vim-airline'
-"
-" " 注释插件 (gcc 注释当前行, gc 注释选中区域)
-" Plug 'tpope/vim-commentary'
-"
-" " 自动补全括号
-" Plug 'jiangmiao/auto-pairs'
-"
-" " Git 集成
-" Plug 'tpope/vim-fugitive'
-"
-" " 代码对齐
-" Plug 'junegunn/vim-easy-align'
-"
-" call plug#end()
-"
-" " 主题设置
-" colorscheme gruvbox
-" set background=dark
