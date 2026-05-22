@@ -65,6 +65,13 @@ require("lazy").setup({
 	    require("nvim-tree").setup {}
 	    end,
 	},
+	{ "mason-org/mason.nvim",  opts = {}},
+	{ "neovim/nvim-lspconfig" },
+	{ "hrsh7th/nvim-cmp" },
+	{ "hrsh7th/cmp-nvim-lsp" },
+	{ "hrsh7th/cmp-buffer" },
+	{ "hrsh7th/cmp-path" },
+	{ "hrsh7th/cmp-cmdline" },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
