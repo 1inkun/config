@@ -22,3 +22,5 @@ vim.keymap.set({ "i", "s" }, "<C-E>", function()
 		ls.change_choice(1)
 	end
 end, { silent = true })
+-- MarkdownViewr
+vim.keymap.set("n", "<leader>s", "<CMD>Markview splitToggle<CR>", { desc = "Toggles `splitview` for current buffer." })

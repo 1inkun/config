@@ -26,26 +26,19 @@ require("lazy").setup({
 	spec = {
 		-- import your plugins
 		{ import = "plugins" },
-		{ "vim-airline/vim-airline", version = false },
-		{ "vim-airline/vim-airline-themes", version = false },
+		-- 状态栏
+		-- { "vim-airline/vim-airline", version = false },
+		-- { "vim-airline/vim-airline-themes", version = false },
+		-- 标签页
 		{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 		{ "neovim/nvim-lspconfig" },
-		{
-			"L3MON4D3/LuaSnip",
-			-- follow latest release.
-			version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-			-- install jsregexp (optional!).
-			build = "make install_jsregexp",
-			dependencies = {
-
-				{
-					"rafamadriz/friendly-snippets",
-					config = function()
-						require("luasnip.loaders.from_vscode").lazy_load()
-					end,
-				},
-			},
-		},
+		{ "mason-org/mason.nvim", opts = {} },
+		-- mini.nvim
+		{ 'nvim-mini/mini.animate', version = false },
+		{ "nvim-mini/mini.cursorword", version = false },
+		{ "nvim-mini/mini.comment", version = false },
+		{ 'nvim-mini/mini.move', version = false },
+		{ "nvim-mini/mini.surround", version = false },
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
