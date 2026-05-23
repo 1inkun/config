@@ -12,6 +12,7 @@ require("bufferline").setup({
 require("nvim-tree").setup()
 require("lualine").setup()
 require("lspconfig")
+require("config.nvim-lint")
 require("config.nvim-cmp")
 
 -- disable netrw at the very start of your init.lua
@@ -19,9 +20,7 @@ require("config.nvim-cmp")
 -- vim.g.loaded_netrwPlugin = 1
 
 -- lspServer
--- vim.lsp.enable("clangd")
--- vim.lsp.enable("stylua")
--- vim.lsp.enable("vtsls")
--- vim.lsp.enable("vue_ls")
+vim.lsp.enable("vtsls")
+vim.lsp.enable("html")
 
 -- vim.lsp.codelens.enable(true, { bufnr = 0 })

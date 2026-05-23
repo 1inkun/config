@@ -34,11 +34,12 @@ require("lazy").setup({
 		{ "neovim/nvim-lspconfig" },
 		{ "mason-org/mason.nvim", opts = {} },
 		-- mini.nvim
-		{ 'nvim-mini/mini.animate', version = false },
+		{ "nvim-mini/mini.animate", version = false },
 		{ "nvim-mini/mini.cursorword", version = false },
 		{ "nvim-mini/mini.comment", version = false },
-		{ 'nvim-mini/mini.move', version = false },
+		{ "nvim-mini/mini.move", version = false },
 		{ "nvim-mini/mini.surround", version = false },
+		{ "mfussenegger/nvim-lint" },
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.

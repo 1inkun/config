@@ -7,8 +7,9 @@ return {
 					lua = { "stylua" },
 					javascript = { "prettierd", "prettier", stop_after_first = true },
 					typescript = { "prettierd", "prettier", stop_after_first = true },
-					html = { "prettierd" },
-					css = { "prettierd" },
+					markdown = { "prettierd", "prettier", stop_after_first = true },
+					html = { "prettier" },
+					css = { "prettier" },
 					c = { "clang-format" },
 				},
 				format_on_save = {
